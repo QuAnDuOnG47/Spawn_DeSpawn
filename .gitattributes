@@ -1,0 +1,16 @@
+# Unity settings
+*.unity binary
+*.prefab binary
+*.asset binary
+*.meta binary
+*.mat binary
+*.anim binary
+*.controller binary
+*.physicMaterial binary
+*.physicsMaterial2D binary
+
+# Force LF for text files
+*.txt text eol=lf
+*.cs text eol=lf
+*.shader text eol=lf
+*.cginc text eol=lf
