@@ -4,28 +4,15 @@ public class FrogMovement : MonoBehaviour
 {
     private Vector3 direction;
     private float speed;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void OnEnable()
     {
-        direction = Random.insideUnitSphere;
-        speed = Random.Range(1f, 5f);
-    }
-    void Start()
-    {
-        
-        
+        direction = new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f)).normalized;
+        speed = Random.Range(0.5f, 2f);
     }
 
-    // Update is called once per frame
     void Update()
     {
-         transform.Translate(direction * speed * Time.deltaTime);
-
-    
-        if (Mathf.Abs(transform.position.x) > 60 || Mathf.Abs(transform.position.z) > 60)
-        {
-            gameObject.SetActive(false);
-        }
+        transform.Translate(direction * speed * Time.deltaTime, Space.World);
     }
-    
 }
